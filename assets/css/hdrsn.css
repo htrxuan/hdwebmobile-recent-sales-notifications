@@ -1,0 +1,34 @@
+.hdrsn-popup {
+	position: fixed;
+	bottom: 1.25em;
+	z-index: 9999;
+	max-width: 320px;
+	background: #fff;
+	color: #1e1e1e;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+	padding: .75em 1em;
+	font-size: .9em;
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity .3s ease, transform .3s ease;
+}
+
+.hdrsn-popup--bottom-left {
+	left: 1.25em;
+}
+
+.hdrsn-popup--bottom-right {
+	right: 1.25em;
+}
+
+.hdrsn-popup.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.hdrsn-popup a {
+	text-decoration: none;
+	color: inherit;
+}
