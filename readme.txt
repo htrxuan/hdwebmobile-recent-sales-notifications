@@ -16,8 +16,8 @@ A "Someone just bought..." popup built entirely on the server -- there is no liv
 
 HDWebmobile Recent Sales Notifications shows a small popup cycling through your recent real orders -- "Someone bought {Product} 2 hours ago". It's built from your store's own completed and processing orders, with no setup beyond turning it on.
 
-= Why this plugin exists =
-"Live sales notification for WooCommerce" (versions up to and including 2.3.39) shipped CVE-2025-12955 (CWE-862 Missing Authorization): its `getOrders` function had no authorization check at all, so any unauthenticated visitor could call it directly and extract sensitive customer information.
+= Security by design =
+A common weakness in sales-notification tools is a public endpoint that returns recent orders with no authorization check at all (CWE-862, Missing Authorization), so any unauthenticated visitor can call it directly and extract sensitive customer information.
 
 This plugin closes that entire class of bug by construction -- not by adding a check to an endpoint, but by having **no endpoint at all**:
 
