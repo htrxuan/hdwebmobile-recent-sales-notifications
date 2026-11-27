@@ -10,9 +10,9 @@ if (!defined('ABSPATH')) {
  * Builds the recent-sales notification list -- and is the ONLY place order data is ever
  * touched by this plugin.
  *
- * CVE-2025-12955 (CWE-862 Missing Authorization) in "Live sales notification for WooCommerce"
- * (<= 2.3.39): its `getOrders` function had no authorization check at all, letting an
- * unauthenticated visitor call it directly and extract sensitive customer information.
+ * The risk this guards against (CWE-862, Missing Authorization): an order-fetching endpoint
+ * with no authorization check, letting an unauthenticated visitor call it directly and
+ * extract sensitive customer information.
  *
  * This plugin closes that entire class of bug by construction, not by adding a check to an
  * endpoint: **there is no endpoint**. Nothing here is ever fetched live by client-side script.

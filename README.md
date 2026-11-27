@@ -12,7 +12,7 @@ Shows a small popup cycling through recent real orders — "Someone bought {Prod
 
 ## Why this plugin exists
 
-"Live sales notification for WooCommerce" (≤ 2.3.39) shipped CVE-2025-12955 (CWE-862 Missing Authorization) — its `getOrders` function had no authorization check, letting unauthenticated visitors extract customer data.
+The main risk in sales-notification plugins is missing authorization (CWE-862) -- an order-fetching endpoint with no authorization check, letting unauthenticated visitors extract customer data.
 
 Closed by construction — not by fixing an endpoint, but by having none:
 
